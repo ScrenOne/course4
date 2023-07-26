@@ -20,6 +20,12 @@ def format_date(date_str):
         # Если парсинг не удался, возвращаем исходную строку
         return date_str
 
+def calculate_total_amount(operations_list):
+    total_amount = 0
+    for operation in operations_list:
+        total_amount += operation["amount"]
+    return total_amount
+
 
 def display_last_successful_operations(file_path):
     operations_data = read_operations_from_file(file_path)
